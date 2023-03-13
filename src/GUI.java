@@ -148,6 +148,7 @@ public class GUI
         int[][] nums = new int[0][0];
         for (int i = 0; i < tablet.getRowCount(); i++)
         {
+            if(tablet.getValueAt(i,0)==null) continue;
             int[] t_arr = new int[0];
             for (int j = 0; j < tablet.getColumnCount(); j++) {
                 int tmp = -18203;
@@ -159,8 +160,9 @@ public class GUI
                     if (tmp != -18203) {
                         t_arr = Main.Add(t_arr, tmp);
                     }
-                }
+                } else continue;
             }
+
             nums = Main.Add(nums,t_arr);
         }
         return nums;
